@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RODI System Selector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>RODI System Selection Tool</h2>
+
+    <!-- Tab Navigation -->
+    <div class="tab-buttons">
+        <button id="tab1Button" class="active">Water Quality & Usage</button>
+        <button id="tab2Button">Distribution System</button>
+        <button id="tab3Button">Room Layout</button>
+    </div>
+
+    <!-- Tab 1: Water Quality & Usage -->
+    <div id="tab1" class="tab-content active">
+        <form id="waterQualityForm">
+            <div class="input-group">
+                <label for="systemType">Select System Type:</label>
+                <select id="systemType" required>
+                    <option value="QuickLab">QuickLab</option>
+                    <option value="MiniLab">MiniLab</option>
+                    <option value="SkidSpec">SkidSpec</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="waterType">Select Water Type:</label>
+                <select id="waterType" required>
+                    <option value="RO">RO Water</option>
+                    <option value="DI">DI Water</option>
+                </select>
+            </div>
+            <div id = "roInputs">
+                <div class="input-group">
+                    <label for="membraneNumber">RO Membrane Number:</label>
+                    <select id="membraneNumber" required>
+                        <option value="">Select membrane number</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="elementsPerHousing">Elements per Housing:</label>
+                    <input type="number" id="elementsPerHousing" placeholder="Enter elements per housing" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="recoveryPercentage">Recovery Percentage (%):</label>
+                    <input type="number" id="recoveryPercentage" placeholder="Enter recovery percentage" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="waterHardness">Water Hardness (PPM):</label>
+                <input type="number" id="waterHardness" placeholder="Enter water hardness" required>
+            </div>
+
+            <div id="minilabInputs" style="display: none;">
+                <div class="input-group">
+                    <label for="dailyWaterConsumption">Water Consumption Daily (Gallons):</label>
+                    <input type="number" id="dailyWaterConsumption" placeholder="Enter daily water consumption" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="cityPressureRange">City Pressure Range (PSI):</label>
+                    <input type="text" id="cityPressureRange" placeholder="Enter city pressure range" required>
+                </div>
+            </div>
+
+
+
+            <button type="button" id="nextButton1">Next</button>
+        </form>
+    </div>
+
+    <!-- Tab 2: Distribution System -->
+    <div id="tab2" class="tab-content">
+        <form id="distributionForm">
+            <div class="input-group">
+                <label for="distributionFlow">Distribution Flow (GPM):</label>
+                <input type="number" id="distributionFlow" placeholder="Enter distribution flow" required>
+            </div>
+
+            <div class="input-group">
+                <label for="loopPressure">Distribution Loop Pressure (PSI):</label>
+                <input type="number" id="loopPressure" placeholder="Enter loop pressure" required>
+            </div>
+
+            <div class="input-group">
+                <label for="storageTankSize">Preferred Storage Tank Size (Gallons):</label>
+                <input type="number" id="storageTankSize" placeholder="Enter preferred storage tank size" required>
+            </div>
+
+            <button type="button" id="nextButton2">Next</button>
+        </form>
+    </div>
+
+    <!-- Tab 3: Room Layout -->
+    <div id="tab3" class="tab-content">
+        <form id="roomLayoutForm">
+            <div class="input-group">
+                <label for="roomWidth">Room Width (W) in feet:</label>
+                <input type="number" id="roomWidth" placeholder="Enter room width" required>
+            </div>
+
+            <div class="input-group">
+                <label for="roomDepth">Room Depth (D) in feet:</label>
+                <input type="number" id="roomDepth" placeholder="Enter room depth" required>
+            </div>
+
+            <div class="input-group">
+                <label for="roomHeight">Room Height (H) in feet:</label>
+                <input type="number" id="roomHeight" placeholder="Enter room height" required>
+            </div>
+
+            <button type="button" id="submitButton">Find Recommended System</button>
+        </form>
+    </div>
+
+    <div id="result"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
